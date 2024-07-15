@@ -821,6 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1868740128}
+  cameraOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1553371175
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +873,9 @@ GameObject:
   - component: {fileID: 1868740134}
   - component: {fileID: 1868740133}
   - component: {fileID: 1868740135}
+  - component: {fileID: 1868740136}
+  - component: {fileID: 1868740137}
+  - component: {fileID: 1868740138}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -894,11 +898,12 @@ MonoBehaviour:
   Control_Events:
     m_PersistentCalls:
       m_Calls: []
+  jump: {fileID: 1868740136}
+  mouseLook: {fileID: 1868740137}
   playerStatistic: {fileID: 1868740130}
-  speed: 5
   sprintSpeed: 0
   jumpForce: 5
-  mouseSensitivity: 200
+  movement: {fileID: 1868740138}
 --- !u!136 &1868740125
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1112,6 +1117,49 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   health: {fileID: 1868740131}
+--- !u!114 &1868740136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868740122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4b7166dd290c14aa99033f36b1360d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxJumpCount: 2
+  jumpCount: 2
+  jumpForce: 10
+  rigidbody: {fileID: 1868740129}
+--- !u!114 &1868740137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868740122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91910860f5d4a54387d84a5fbfb170a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 200
+--- !u!114 &1868740138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868740122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c68b42dda2580e429af0d7d5055bd66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1868740129}
+  speed: 5
 --- !u!1 &1987120190
 GameObject:
   m_ObjectHideFlags: 0

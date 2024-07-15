@@ -13,9 +13,6 @@ public class BulletCollision : MonoBehaviour
 
             Vector3 direction = (other.transform.position - transform.position).normalized * 3;
             enemyRb.AddForce(-direction * force, ForceMode.Impulse);
-            // Vector3 direction = gameObject.transform.forward;
-            // enemyRb.AddForce(-direction * force, ForceMode.Impulse);
-            // playerRb.AddForce(direction * force, ForceMode.Impulse);
 
             GiveDamage.giveDamage(gameObject, other.gameObject);
 

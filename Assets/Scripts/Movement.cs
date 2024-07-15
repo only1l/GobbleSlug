@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class movePlayer : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     // private Rigidbody rb;
     // public float speed = 0.5f;
@@ -20,25 +20,13 @@ public class movePlayer : MonoBehaviour
     //     moveVector.z = Input.GetAxis("Vertical");
     //     rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
     // }
+    public Rigidbody rb;
+    public float speed = 5f;
+    public void Move(){
+        float x = Input.GetAxis("Horizontal") * speed;
+        float z = Input.GetAxis("Vertical") * speed;
 
-    public Transform player;
-    public float speed = 3f;
-
-    public Vector3 cameraOffset;
-
-    void Start(){
-        cameraOffset = transform.position - player.position;
-    }
-
-    void Update(){
-        Vector3 lookDirection = player.forward;
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-
-        Vector3 movement = (lookDirection * y + player.right * x).normalized;
-
-        player.GetComponent<Rigidbody>().MovePosition(player.position + movement * speed * Time.deltaTime);
-
-        transform.position = player.position + cameraOffset;
+        Vector3 move = transform.right * x + transform.forward * z;
+        rb.MovePosition(rb.position + move * Time.deltaTime);
     }
 }
