@@ -5,7 +5,7 @@ using UnityEngine;
 public class DealDamageBullet : MonoBehaviour
 {
     void OnCollisionEnter(Collision other){
-        if(GetComponent<Health>()){
+        if(GetComponent<Stats>()){
             GiveDamage.giveDamage(gameObject, other.gameObject);
             Destroy(gameObject);
         }

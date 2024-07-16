@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 6488573985752306346}
   - component: {fileID: 1348543324661652844}
   - component: {fileID: 7123267273769059082}
+  - component: {fileID: 1008004037653594109}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -181,8 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f180ecff9d1c0a4da2ad7937988ae87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
-  damage: 100
+  HealthStats: {fileID: 1008004037653594109}
   currentHealth: 0
 --- !u!114 &7123267273769059082
 MonoBehaviour:
@@ -197,3 +197,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 20
+--- !u!114 &1008004037653594109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330236044918414884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0ccbc35ffbd3340b599908f5647c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  damage: 100
+  speed: 5
+  stamina: 100
+  maxStamina: 100
+  knocknackForce: 20

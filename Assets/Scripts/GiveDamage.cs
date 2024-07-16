@@ -10,12 +10,12 @@ public class GiveDamage : MonoBehaviour
 
         if (enemyHealth != null)
         {
-            enemyHealth.TakeDamage(playerHealth.damage);
+            enemyHealth.TakeDamage(playerHealth.HealthStats.damage);
         }
 
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage(enemyHealth.damage);
+            playerHealth.TakeDamage(enemyHealth.HealthStats.damage);
         }
     }
 }

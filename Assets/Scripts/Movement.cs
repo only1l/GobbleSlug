@@ -5,21 +5,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // private Rigidbody rb;
-    // public float speed = 0.5f;
-    // private Vector3 moveVector;
-
-    // void Start()
-    // {
-    //     rb = GetComponent<Rigidbody>();
-    // }
-
-    // void Update()
-    // {
-    //     moveVector.x = Input.GetAxis("Horizontal");
-    //     moveVector.z = Input.GetAxis("Vertical");
-    //     rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
-    // }
     public Rigidbody rb;
     public float speed = 5f;
     public void Move(){

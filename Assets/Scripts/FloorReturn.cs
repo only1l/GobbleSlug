@@ -13,7 +13,7 @@ public class FloorReturn : MonoBehaviour
         spawnAreaMax = Platform.GetComponent<Collider>().bounds.max;
     }
     void OnCollisionEnter(Collision other){
-        if(other.collider.TryGetComponent<Health>(out Health health)){
+        if(other.gameObject.TryGetComponent<Health>(out Health health)){
             health.currentHealth -= health.currentHealth/5;
             other.collider.transform.position = (spawnAreaMax + spawnAreaMin 
                                                   + Vector3.up * 5)/2;

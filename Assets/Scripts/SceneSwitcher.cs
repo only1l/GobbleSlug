@@ -14,7 +14,7 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(nextSceneIndex));
     }
 
-    public void LoadSceneString(string sceneName){
+    public static void LoadSceneString(string sceneName){
         SceneManager.LoadScene(sceneName);
     }
 }

@@ -1,29 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyCollision : MonoBehaviour
 {
     public float force = 10.0f;
 
+    NavMeshAgent agent;
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
+            Stats enemyStats = GetComponent<Stats>();
+            Stats playerStats = other.gameObject.GetComponent<Stats>();
+
             Rigidbody enemyRb = GetComponent<Rigidbody>();
             Rigidbody playerRb = other.gameObject.GetComponent<Rigidbody>();
 
             Vector3 direction = (other.transform.position - transform.position).normalized * 3;
-            enemyRb.AddForce(-direction * force, ForceMode.Impulse);
-            playerRb.AddForce(direction * force, ForceMode.Impulse);
-            // Vector3 direction = gameObject.transform.forward;
-            // enemyRb.AddForce(-direction * force, ForceMode.Impulse);
-            // playerRb.AddForce(direction * force, ForceMode.Impulse);
+            StartCoroutine(WaitAfterKnockback());
+            enemyRb.AddForce(-direction * playerStats.knocknackForce, ForceMode.Impulse);
+            playerRb.AddForce(direction * enemyStats.knocknackForce, ForceMode.Impulse);
 
             GiveDamage.giveDamage(gameObject, other.gameObject);
         }
 
         
+    }
+
+    IEnumerator WaitAfterKnockback(){
+        agent = GetComponent<NavMeshAgent>();
+        agent.enabled = false;
+        yield return new WaitForSeconds(2f);
+        agent.enabled = true;
     }
 }
