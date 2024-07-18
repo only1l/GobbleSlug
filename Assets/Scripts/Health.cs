@@ -6,18 +6,15 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     public Stats HealthStats;
-    public float currentHealth;
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
-        currentHealth = HealthStats.maxHealth;
-        PlayerPrefs.SetFloat("Health", currentHealth);
+        // DontDestroyOnLoad(gameObject);
+        HealthStats.currentHealth = HealthStats.maxHealth;
     }
 
     public void TakeDamage(float amount)
     {
-        Debug.Log(PlayerPrefs.GetInt("Health"));
-        currentHealth -= amount;
+        HealthStats.currentHealth -= amount;
     }
 }

@@ -8,7 +8,7 @@ public class GoTo : MonoBehaviour
     public Transform goal;
     NavMeshAgent agent;
 
-    void Start(){
+    void OnEnable(){
         agent = GetComponent<NavMeshAgent>();
     }
 

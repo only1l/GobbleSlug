@@ -9,7 +9,7 @@ public class Death : MonoBehaviour
     public Health health;
 
     void Update(){
-        if(health.currentHealth <= 0){
+        if(health.HealthStats.currentHealth <= 0){
             dieEvent.Invoke();
             Destroy(gameObject);
         }

@@ -7,6 +7,7 @@ public class ShootBullet : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 20f;
     public Transform player;
+    public Stats bulletStats;
     void Start()
     {
         player = PlayerInfo.player.transform;
@@ -17,5 +18,9 @@ public class ShootBullet : MonoBehaviour
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.velocity = player.forward * bulletSpeed;
+    }
+
+    public void Upgrade(){
+        bulletStats.damage += 10;
     }
 } 

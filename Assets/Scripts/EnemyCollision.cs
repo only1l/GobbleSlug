@@ -7,9 +7,6 @@ using UnityEngine.AI;
 public class EnemyCollision : MonoBehaviour
 {
     public float force = 10.0f;
-
-    NavMeshAgent agent;
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
@@ -21,20 +18,12 @@ public class EnemyCollision : MonoBehaviour
             Rigidbody playerRb = other.gameObject.GetComponent<Rigidbody>();
 
             Vector3 direction = (other.transform.position - transform.position).normalized * 3;
-            StartCoroutine(WaitAfterKnockback());
             enemyRb.AddForce(-direction * playerStats.knocknackForce, ForceMode.Impulse);
             playerRb.AddForce(direction * enemyStats.knocknackForce, ForceMode.Impulse);
-
             GiveDamage.giveDamage(gameObject, other.gameObject);
         }
-
-        
     }
 
-    IEnumerator WaitAfterKnockback(){
-        agent = GetComponent<NavMeshAgent>();
-        agent.enabled = false;
-        yield return new WaitForSeconds(2f);
-        agent.enabled = true;
-    }
+
+    
 }

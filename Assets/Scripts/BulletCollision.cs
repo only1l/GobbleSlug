@@ -11,8 +11,8 @@ public class BulletCollision : MonoBehaviour
         {
             Rigidbody enemyRb = other.gameObject.GetComponent<Rigidbody>();
 
-            Vector3 direction = (other.transform.position - transform.position).normalized * 3;
-            enemyRb.AddForce(-direction * force, ForceMode.Impulse);
+            Vector3 direction = (other.transform.position - PlayerInfo.player.transform.position).normalized * 3;
+            enemyRb.AddForce(direction * force, ForceMode.Impulse);
 
             GiveDamage.giveDamage(gameObject, other.gameObject);
 

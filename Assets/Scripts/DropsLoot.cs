@@ -10,7 +10,7 @@ public class DropsLoot : MonoBehaviour
     void DropLoot(){
         Instantiate(loot, transform.position, Quaternion.identity);
     }
-    void Start(){
+    void OnEnable(){
         onDeathEvent.dieEvent.AddListener(DropLoot);
     }
 }

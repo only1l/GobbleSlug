@@ -6,14 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-   public static void LoadScene(){
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int sceneCount = SceneManager.sceneCount;
-        int nextSceneIndex =(sceneIndex ) % sceneCount;
-        SceneManager.LoadScene(nextSceneIndex);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(nextSceneIndex));
-    }
-
     public static void LoadSceneString(string sceneName){
         SceneManager.LoadScene(sceneName);
     }

@@ -14,9 +14,10 @@ public class FloorReturn : MonoBehaviour
     }
     void OnCollisionEnter(Collision other){
         if(other.gameObject.TryGetComponent<Health>(out Health health)){
-            health.currentHealth -= health.currentHealth/5;
+            health.HealthStats.currentHealth -= health.HealthStats.currentHealth/5;
             other.collider.transform.position = (spawnAreaMax + spawnAreaMin 
                                                   + Vector3.up * 5)/2;
+            other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
     }
 }
