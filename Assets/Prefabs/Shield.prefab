@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2540807325834424844}
   - component: {fileID: 4691848825606660654}
   - component: {fileID: 7803131820623574684}
-  - component: {fileID: 3577161227225973939}
+  - component: {fileID: 1658719594550639330}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Shield
@@ -135,7 +135,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: fa0a723e3534aca47bcf60641f2f3a8d, type: 3}
---- !u!114 &3577161227225973939
+--- !u!114 &1658719594550639330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,12 +144,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4659789033105739051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14a25aeb4f3cbca44ab93f56ab45549f, type: 3}
+  m_Script: {fileID: 11500000, guid: b21bb20811621814480a67d2fba28520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dieEvent:
-    m_PersistentCalls:
-      m_Calls: []
   health: {fileID: 2540807325834424844}
 --- !u!1001 &4063373076730936442
 PrefabInstance:

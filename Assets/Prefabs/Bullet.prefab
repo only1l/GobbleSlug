@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf8082e334b7a564f8ca27f92d8ec9f3, type: 2}
+  - {fileID: 2100000, guid: 6f6a6c7cc7b52124cb7b13876e072ea4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
-  damage: 100
+  damage: 30
   speed: 5
   stamina: 100
   maxStamina: 100
